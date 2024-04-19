@@ -7,7 +7,7 @@ public class BoxColliderModify : MonoBehaviour
 {
     private BoxCollider boxCollider;
     private bool isPressedLastFrame=false;
-    public Vector3 EnlargedColliderSiz=new Vector3(0.042f,0.042f,0.03132292f);
+    public Vector3 EnlargedColliderSiz=new Vector3(0.042f,0.042f,0.01f);
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +44,6 @@ public class BoxColliderModify : MonoBehaviour
 
     private void BoxColliderShrink()
     {
-        boxCollider.size=new Vector3(0.032f,0.032f,0.03132292f);
+        boxCollider.size=new Vector3(0.032f,0.032f,0.01f);
     }
 }

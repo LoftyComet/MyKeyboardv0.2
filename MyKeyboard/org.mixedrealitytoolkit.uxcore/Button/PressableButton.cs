@@ -199,13 +199,13 @@ namespace MixedReality.Toolkit.UX
         /// <inheritdoc />
         internal protected override bool CanClickOnFirstSelectEntered(SelectEnterEventArgs args)
         {
-            return base.CanClickOnFirstSelectEntered(args) && !IsRolledOff();
+            return base.CanClickOnFirstSelectEntered(args) && !IsRolledOff()&&false;
         }
 
         /// <inheritdoc />
         internal protected override bool CanClickOnLastSelectExited(SelectExitEventArgs args)
         {
-            return base.CanClickOnLastSelectExited(args) && !IsRolledOff();
+            return base.CanClickOnLastSelectExited(args) && !IsRolledOff()&&false;
         }
 
         /// <summary>
@@ -541,7 +541,7 @@ namespace MixedReality.Toolkit.UX
         // This function projects the current touch positions onto the 1D press direction of the button.
         // It will output the farthest pushed distance from the button's initial position.
         // Returns the farthest-pressing interactor. If no interactors are touching the button, returns null.
-        private IPokeInteractor TryGetFarthestPressDistance(out float distance)
+        public IPokeInteractor TryGetFarthestPressDistance(out float distance)
         {
             // If we're not being touched/poked, we aren't pressed at all.
             if (!IsPokeHovered.Active)
@@ -574,7 +574,7 @@ namespace MixedReality.Toolkit.UX
         // If RejectXYRollOff is true, this method checks if the interactor has fallen off the 2D footprint of the button
         // in the X-Y plane.
         // If RejectZRollOff is true, this method checks if the finger has gone through the button and out the back.
-        private bool IsRolledOff()
+        public bool IsRolledOff()
         {
             // Early-out if neither type of roll-off rejection is desired.
             if (!rejectXYRollOff && !rejectZRollOff)

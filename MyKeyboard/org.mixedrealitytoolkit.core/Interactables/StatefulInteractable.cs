@@ -409,5 +409,11 @@ namespace MixedReality.Toolkit
 
             IsToggled.Active = !IsToggled;
         }
+
+        public void NewQuickTap_Click()
+        {
+            TryToggle();
+            OnClicked.Invoke();
+        }
     }
 }
